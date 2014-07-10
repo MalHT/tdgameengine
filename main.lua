@@ -12,6 +12,7 @@ function love.load()
     
     
   player = {} -- new table
+  player.sprite = love.graphics.newImage("steve.gif")
   player.x = 300
   player.y = 300
   player.speed = 300
@@ -61,6 +62,5 @@ function love.draw()
   
   drawMap(levelGrid)
   
-  love.graphics.setColor(255,255,0,255)
-  love.graphics.circle("fill", player.x, player.y, 16)
+  love.graphics.draw(player.sprite, player.x, player.y)
 end
