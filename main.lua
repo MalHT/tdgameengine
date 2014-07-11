@@ -12,7 +12,7 @@ function love.load()
     
     
   player = {} -- new table
-  player.sprite = love.graphics.newImage("steve.gif")
+  player.sprite = love.graphics.newImage("res/steve.gif")
   player.x = 300
   player.y = 300
   player.speed = 300
