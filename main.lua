@@ -23,9 +23,9 @@ function drawMap(map)
   for x=0, levelWidth do
     for y=0, levelHeight do
       if levelGrid[x][y] == 1 then
-        love.graphics.setColor(0,128,0,255)
+        love.graphics.setColor(120,120,120,255)
       else
-        love.graphics.setColor(255,0,0,255)
+        love.graphics.setColor(210,210,210,255)
       end
       love.graphics.rectangle("fill", x*16, y*16, 16, 16)
     end
@@ -62,5 +62,6 @@ function love.draw()
   
   drawMap(levelGrid)
   
+  love.graphics.setColor(255, 255, 255)
   love.graphics.draw(player.sprite, player.x, player.y)
 end
