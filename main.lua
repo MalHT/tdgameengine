@@ -1,3 +1,5 @@
+Gamestate = require "lib.hump.gamestate"
+
 function love.load()
   levelWidth = 50
   levelHeight = 50
