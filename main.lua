@@ -1,6 +1,15 @@
 Gamestate = require "lib.hump.gamestate"
 
+local menu = {}
+local game = {}
+
 function love.load()
+  Gamestate.registerEvents()
+  Gamestate.switch(game)
+
+end
+
+function game:enter()
   levelWidth = 50
   levelHeight = 50
   levelGrid = {}
@@ -18,6 +27,7 @@ function love.load()
   player.x = 300
   player.y = 300
   player.speed = 300
+  
 end
 
 function drawMap(map)
@@ -35,7 +45,7 @@ function drawMap(map)
 
 end
 
-function love.update(dt)
+function game:update(dt)
 
   if love.keyboard.isDown("a") then
     player.x = player.x - player.speed*dt
@@ -51,7 +61,7 @@ function love.update(dt)
   end
 end
 
-function love.draw()
+function game:draw()
   
   levelGrid[0][0] = 1
   levelGrid[0][1] = 1
