@@ -21,7 +21,6 @@ function game:enter()
   end
     
     
-    
   player = {} -- new table
   player.sprite = love.graphics.newImage("res/steve.gif")
   player.x = 300
