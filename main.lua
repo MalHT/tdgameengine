@@ -20,12 +20,14 @@ function game:enter()
       end
   end
     
-    
+  love.mouse.setVisible(false)
+	
   player = {} -- new table
   player.sprite = love.graphics.newImage("res/steve.gif")
+  player.crosshair = love.graphics.newImage("res/crosshair.gif")
   player.x = 300
   player.y = 300
-  player.speed = 300
+  player.speed = 200
   
 end
 
@@ -75,4 +77,7 @@ function game:draw()
   
   love.graphics.setColor(255, 255, 255)
   love.graphics.draw(player.sprite, player.x, player.y)
+  
+  x, y = love.mouse.getPosition( )
+  love.graphics.draw(player.crosshair, x, y) -- draw the custom mouse image
 end
