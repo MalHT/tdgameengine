@@ -29,6 +29,10 @@ function game:enter()
   player.y = 300
   player.speed = 200
   
+  tiles = {}
+  tiles.basefloor = love.graphics.newImage("res/basefloortile.gif")
+  tiles.containmentfloor = love.graphics.newImage("res/containmentfloortile.gif")
+  tiles.dirt = love.graphics.newImage("res/dirttile.gif")
 end
 
 function drawMap(map)
@@ -36,11 +40,13 @@ function drawMap(map)
   for x=0, levelWidth do
     for y=0, levelHeight do
       if levelGrid[x][y] == 1 then
-        love.graphics.setColor(120,120,120,255)
+	  love.graphics.draw(tiles.dirt, x*16, y*16)
+      --  love.graphics.setColor(120,120,120,255)
       else
-        love.graphics.setColor(210,210,210,255)
+	  love.graphics.draw(tiles.basefloor, x*16, y*16)
+       -- love.graphics.setColor(210,210,210,255)
       end
-      love.graphics.rectangle("fill", x*16, y*16, 16, 16)
+      --love.graphics.rectangle("fill", x*16, y*16, 16, 16)
     end
   end
 
@@ -61,7 +67,7 @@ function game:update(dt)
     player.y = player.y + player.speed*dt
   end
   
-  x, y = love.mouse.getPosition( )
+  x, y = love.mouse.getPosition( ) -- gets position of mouse
 end
 
 function game:draw()
@@ -77,8 +83,9 @@ function game:draw()
   
   drawMap(levelGrid)
   
+  love.graphics.setColor(255, 0, 0)
+  love.graphics.line(player.x + 8,player.y + 16, x + 8,y + 8) -- plus and minus to create line that goes from centre instead of top right
   love.graphics.setColor(255, 255, 255)
-  love.graphics.line(player.x + 8,player.y + 16, x + 8,y + 8) 
   love.graphics.draw(player.sprite, player.x, player.y)
   love.graphics.draw(player.crosshair, x, y) -- draw the custom mouse image
 end
