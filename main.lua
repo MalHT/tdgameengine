@@ -60,6 +60,8 @@ function game:update(dt)
   if love.keyboard.isDown("s") then
     player.y = player.y + player.speed*dt
   end
+  
+  x, y = love.mouse.getPosition( )
 end
 
 function game:draw()
@@ -76,8 +78,7 @@ function game:draw()
   drawMap(levelGrid)
   
   love.graphics.setColor(255, 255, 255)
+  love.graphics.line(player.x + 8,player.y + 16, x + 8,y + 8) 
   love.graphics.draw(player.sprite, player.x, player.y)
-  
-  x, y = love.mouse.getPosition( )
   love.graphics.draw(player.crosshair, x, y) -- draw the custom mouse image
 end
