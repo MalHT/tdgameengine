@@ -72,15 +72,6 @@ end
 
 function game:draw()
   
-  levelGrid[0][0] = 1
-  levelGrid[0][1] = 1
-  levelGrid[1][0] = 1
-  levelGrid[0][2] = 1
-  levelGrid[1][2] = 1
-  levelGrid[2][0] = 1
-  levelGrid[2][1] = 1
-  levelGrid[2][2] = 1
-  
   drawMap(levelGrid)
   
   love.graphics.setColor(255, 0, 0)
