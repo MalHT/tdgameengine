@@ -6,6 +6,7 @@ local menu = {}
 local game = {}
 
 function love.load()
+  love.window.setMode(31*16, 31*16, {resizable=true, vsync=false, minwidth=400, minheight=300})
   Gamestate.registerEvents()
   Gamestate.switch(game)
 
