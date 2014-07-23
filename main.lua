@@ -55,7 +55,12 @@ function game:update(dt)
   playerMove()
   mapDetect()
   playerAim()
-end
+  
+  if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16, 16) then
+	player.x = player.x - 10
+	end
+	
+  end
 
 function game:draw()
   

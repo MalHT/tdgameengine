@@ -12,3 +12,11 @@ function mapDetect()
 	player.x = 496 - player.sprite:getWidth()
 	end
 end
+
+function collisionDetect(ax1, ay1, aWidth, aHeight, bx1, by1, bWidth, bHeight)
+ax2 = ax1 + aWidth
+ay2 = ay1 + aHeight
+bx2 = bx1 + bWidth
+by2 = by1 + bHeight
+return ax1 < bx2 and ax2 > bx1 and ay1 < by2 and ay2 > by1
+end

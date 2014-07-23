@@ -4,6 +4,8 @@
   player.x = 300
   player.y = 250
   player.speed = 1
+  player.width = 16
+  player.height = 32
   
   function playerMove()
   --movement of player character system
