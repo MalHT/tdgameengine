@@ -11,34 +11,30 @@
   function playerMove()
   --movement of player character system
   if love.keyboard.isDown("a") then
+  player.x = player.x - player.speed
 	if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16, 16) then
 		player.x = player.x + player.speed
-	else
-		player.x = player.x - player.speed
 	end
   end
   
   if love.keyboard.isDown("d") then
+  player.x = player.x + player.speed
     if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16, 16) then
 		player.x = player.x - player.speed
-	else
-		player.x = player.x + player.speed
 	end
   end
   
   if love.keyboard.isDown("w") then
+  player.y = player.y - player.speed
 	if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16, 16) then
 		player.y = player.y + player.speed
-	else
-		player.y = player.y - player.speed
 	end
   end
   
   if love.keyboard.isDown("s") then
+  player.y = player.y + player.speed
     if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16, 16) then
 		player.y = player.y - player.speed
-	else
-		player.y = player.y + player.speed
 	end
   end
   
