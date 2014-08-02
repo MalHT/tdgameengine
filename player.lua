@@ -12,30 +12,55 @@
   --movement of player character system
   if love.keyboard.isDown("a") then
   player.x = player.x - player.speed
-	if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16 * 11, 16) then
+  for x=0, levelWidth do
+	  for y=0, levelHeight do
+	    if levelGrid[x][y] > 0 then
+		  if collisionDetect(player.x, player.y, player.width, player.height, x * 16, y * 16, 16, 16) then
 		player.x = player.x + player.speed
-	end
+	      end
+	    end
+	  end
+  end
+	
   end
   
   if love.keyboard.isDown("d") then
   player.x = player.x + player.speed
-    if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16 * 11, 16) then
+	for x=0, levelWidth do
+	  for y=0, levelHeight do
+	    if levelGrid[x][y] > 0 then
+		  if collisionDetect(player.x, player.y, player.width, player.height, x * 16, y * 16, 16, 16) then
 		player.x = player.x - player.speed
-	end
+	      end
+	    end
+	  end
+    end
   end
   
   if love.keyboard.isDown("w") then
   player.y = player.y - player.speed
-	if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16 * 11, 16) then
-		player.y = player.y + player.speed
-	end
+  	for x=0, levelWidth do
+	  for y=0, levelHeight do
+	    if levelGrid[x][y] > 0 then
+		  if collisionDetect(player.x, player.y, player.width, player.height, x * 16, y * 16, 16, 16) then
+		  player.y = player.y + player.speed
+	      end
+	    end
+	  end
+    end
   end
   
   if love.keyboard.isDown("s") then
   player.y = player.y + player.speed
-    if collisionDetect(player.x, player.y, player.width, player.height, 10 * 16, 10 * 16, 16 * 11, 16) then
-		player.y = player.y - player.speed
-	end
+    for x=0, levelWidth do
+	  for y=0, levelHeight do
+	    if levelGrid[x][y] > 0 then
+		  if collisionDetect(player.x, player.y, player.width, player.height, x * 16, y * 16, 16, 16) then
+		    player.y = player.y - player.speed
+	      end
+	    end
+	  end
+    end
   end
   
   end

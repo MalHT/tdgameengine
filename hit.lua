@@ -20,3 +20,15 @@ bx2 = bx1 + bWidth
 by2 = by1 + bHeight
 return ax1 < bx2 and ax2 > bx1 and ay1 < by2 and ay2 > by1
 end
+
+function LevelDetect()
+	collide = false
+	for x=0, levelWidth do
+	  for y=0, levelHeight do
+	    if levelGrid[x][y] > 0 then
+	     collide = collisionDetect(player.x, player.y, player.width, player.height, x * 16, y * 16, 16, 16)
+	    end
+	  end
+    end
+	return collide
+end
