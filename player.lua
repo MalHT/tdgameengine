@@ -1,6 +1,6 @@
   require "hit"
   player = {} -- new table
-  player.sprite = love.graphics.newImage("res/steve.gif")
+  player.sprite = love.graphics.newImage("res/maleAgent.gif")
   player.crosshair = love.graphics.newImage("res/crosshair.gif")
   player.x = 300
   player.y = 250
